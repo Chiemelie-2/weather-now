@@ -213,8 +213,8 @@ async function searchLocation(cityName) {  // ✅ FIXED: async not sync
                 align-items: center;
                 gap: 8px;
             ">
-                    <img src="../assets/images/icon-loading.svg" alt="icon" style="width:24px;height:24px;">
-                <span style="color:white;">Searching...</span>
+                    <img src="/assets/images/icon-loading.svg" alt="icon" style="width:24px;height:24px;">
+                <span style="color:white;">Searching....</span>
             </div>
         `;
 
@@ -327,8 +327,8 @@ async function main(useGPS = false) {
             align-items: center;
             gap: 8px;
         ">
-            <img src="../assets/images/icon-loading.svg" alt="icon" style="width:24px;height:24px;">
-            <span style="color:white;">Getting location...</span>
+            <img src="/assets/images/icon-loading.svg" alt="icon" style="width:24px;height:24px;">
+            <span style="color:white;">Getting location....</span>
         </div>
             
         `;
@@ -376,11 +376,6 @@ async function main(useGPS = false) {
         console.log("❌ Geolocation Error:", err);
         
         // GPS failed, ask user for city
-        const cityName = prompt(
-            "Unable to get GPS location.\n\n" +
-            "Please enter your city name\n" +
-            "(e.g., Awka, Onitsha, Nnewi):"
-        );
         
         if (cityName) {
             await searchLocation(cityName);
@@ -437,18 +432,18 @@ const getDayName = (dateString, index) => {
 
 // Helper function to get weather icon path
 const getWeatherIconPath = (code) => {
-    if (code === 0) return '../assets/images/icon-sunny.webp';
-    if (code <= 3) return '../assets/images/icon-partly-cloudy.webp';
-    if (code <= 48) return '../assets/images/icon-fog.webp';
-    if (code <= 57) return '../assets/images/icon-drizzle.webp';
-    if (code <= 67) return '../assets/images/icon-rain.webp';
-    if (code <= 77) return '../assets/images/icon-snow.webp';
-    if (code <= 82) return '../assets/images/icon-rain.webp';
-    if (code <= 99) return '../assets/images/icon-storm.webp';
-    return '../assets/images/icon-partly-cloudy.webp';
+    if (code === 0) return '/assets/images/icon-sunny.webp';
+    if (code <= 3) return '/assets/images/icon-partly-cloudy.webp';
+    if (code <= 48) return '/assets/images/icon-fog.webp';
+    if (code <= 57) return '/assets/images/icon-drizzle.webp';
+    if (code <= 67) return '/assets/images/icon-rain.webp';
+    if (code <= 77) return '/assets/images/icon-snow.webp';
+    if (code <= 82) return '/assets/images/icon-rain.webp';
+    if (code <= 99) return '/assets/images/icon-storm.webp';
+    return '/assets/images/icon-partly-cloudy.webp';
 };
 
-// Then your display7DayForecast function here...
+// Then your display7DayForecast function here.
 
 const display7DayForecast = (data) => {
     console.log('display7DayForecast called');
@@ -708,15 +703,15 @@ const precipRadio = document.querySelectorAll('input[name="precip"]');
 
 // Weather icon function (you need this)
 const getWeatherIcon = (code) => {
-    if (code === 0) {return`<img src="../assets/images/icon-sunny.webp" alt="Sunday" width="150">`};
-    if (code <= 3)  {return `<img src="../assets/images/icon-partly-cloudy.webp" alt="icon-partly-cloudy" width="150">`};
-    if (code <= 48) {return `<img src="../assets/images/icon-fog.webp" alt="icon-fog"width="150">`};
-    if (code <= 57) {return `<img src="../assets/images/icon-drizzle.webp" alt="icon-drizzle"width="150">`};
-    if (code <= 67) {return `<img src="../assets/images/icon-rain.webp" alt="Rain" width="150">`};
-    if (code <= 77) {return  `<img src="../assets/images/icon-snow.webp" alt="icon-snow" width="150">`};
-    if (code <= 82) {return `<img src="../assets/images/icon-Rain-showers.png" alt="rain-shower" width="150">`};
-    if (code <= 99) {return `<img src="../assets/images/icon-storm.webp" alt="icon-storm" width="150">`};
-    return `<img src="../assets/images/icon-partly-cloudy.webp" alt="icon-partly-cloudy" width="150">`;
+    if (code === 0) {return`<img src="/assets/images/icon-sunny.webp" alt="Sunday" width="150">`};
+    if (code <= 3)  {return `<img src="/assets/images/icon-partly-cloudy.webp" alt="icon-partly-cloudy" width="150">`};
+    if (code <= 48) {return `<img src="/assets/images/icon-fog.webp" alt="icon-fog"width="150">`};
+    if (code <= 57) {return `<img src="/assets/images/icon-drizzle.webp" alt="icon-drizzle"width="150">`};
+    if (code <= 67) {return `<img src="/assets/images/icon-rain.webp" alt="Rain" width="150">`};
+    if (code <= 77) {return  `<img src="/assets/images/icon-snow.webp" alt="icon-snow" width="150">`};
+    if (code <= 82) {return `<img src="/assets/images/icon-Rain-showers.png" alt="rain-shower" width="150">`};
+    if (code <= 99) {return `<img src="/assets/images/icon-storm.webp" alt="icon-storm" width="150">`};
+    return `<img src="/assets/images/icon-partly-cloudy.webp" alt="icon-partly-cloudy" width="150">`;
 };
 
 
